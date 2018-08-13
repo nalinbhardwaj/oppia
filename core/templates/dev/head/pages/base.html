@@ -61,13 +61,11 @@
 
     <link rel="apple-touch-icon" href="/assets/images/logo/favicon.png">
 
-    <!-- The title is bound to the rootScope. The content of the block
-    maintitle can be a string or a translation id. If it is a translation it
-    will be replaced by its translation when the page is loading. If it is a
-    string it would be displayed as is. This is the only way to translate
-    the page title because the head of the file is outside the scope of
-    any other controller. -->
-    <title itemprop="name" translate="{% block maintitle %}Oppia{% endblock maintitle %}"></title>
+    <!-- The title is bound to the rootScope. The title can be a string or a
+      translation id. If it is a translation it will be replaced by its
+      translation when the page is loading. If it is a string it would be
+      displayed as is. -->
+    <title itemprop="name" ng-bind="maintitle | translate"></title>
     {% block base_url %}
     {% endblock base_url %}
 

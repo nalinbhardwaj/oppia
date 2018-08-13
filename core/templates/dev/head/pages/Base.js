@@ -59,5 +59,11 @@ oppia.controller('Base', [
       mainContentElement.scrollIntoView();
       mainContentElement.focus();
     };
+
+    $rootScope.maintitle = 'Oppia';
+
+    $rootScope.setTitle = function(newTitle) {
+      $rootScope.maintitle = newTitle;
+    };
   }
 ]);

@@ -3,19 +3,6 @@
 {% block navbar_breadcrumb %}
 {% endblock navbar_breadcrumb %}
 
-{% block maintitle %}
-  {% if status_code == 400 %}
-    I18N_ERROR_PAGE_TITLE_400
-  {% elif status_code == 401 %}
-    I18N_ERROR_PAGE_TITLE_401
-  {% elif status_code == 404 %}
-    I18N_ERROR_PAGE_TITLE_404
-  {% elif status_code == 500 %}
-    I18N_ERROR_PAGE_TITLE_500
-  {% endif %}
-{% endblock maintitle %}
-
-
 {% block content %}
   <div class="oppia-content oppia-error-page-main-content" ng-controller="Error">
     <br>

@@ -17,12 +17,26 @@
  */
 
 oppia.controller('Error', [
-  '$scope', 'UrlInterpolationService',
+  '$rootScope', '$scope', 'UrlInterpolationService',
   function(
-      $scope, UrlInterpolationService) {
+      $rootScope, $scope, UrlInterpolationService) {
     $scope.oopsMintImgUrl = UrlInterpolationService.getStaticImageUrl(
       '/general/oops_mint.png');
 
     $scope.statusCode = GLOBALS.status_code;
+    switch($scope.statusCode) {
+    	case 400:
+    		$rootScope.setTitle("I18N_ERROR_PAGE_TITLE_400");
+    		break;
+    	case 401:
+    		$rootScope.setTitle("I18N_ERROR_PAGE_TITLE_401");
+    		break;
+    	case 404:
+    		$rootScope.setTitle("I18N_ERROR_PAGE_TITLE_404");
+    		break;
+    	case 500:
+    		$rootScope.setTitle("I18N_ERROR_PAGE_TITLE_500");
+    		break;
+    }
   }
 ]);
